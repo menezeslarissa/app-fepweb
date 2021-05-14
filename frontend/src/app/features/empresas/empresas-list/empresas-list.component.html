@@ -1,0 +1,41 @@
+<app-toolbar></app-toolbar>
+
+<!-- <mat-grid-list cols="1" rowHeight="4:1">
+    <mat-grid-tile> -->
+<br>
+<div class="add-btn">
+    <button mat-flat-button color="primary" (click)="adicionarEmpresa()">Registrar</button>
+</div>
+<br>
+
+<table mat-table [dataSource]="empresas" class="mat-elevation-z8" style="width: 98%;
+margin-left: 1rem;
+margin-right: 1rem;">
+
+
+    <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cnpj">
+        <th mat-header-cell *matHeaderCellDef> CNPJ </th>
+        <td mat-cell *matCellDef="let element"> {{element.cnpj}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef> Data do cadastro </th>
+        <td mat-cell *matCellDef="let element"> {{element.createdAt | date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Opções </th>
+        <td mat-cell *matCellDef="let element"> <button mat-icon-button (click)="atualizarEmpresa(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
