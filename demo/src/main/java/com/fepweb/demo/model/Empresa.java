@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
@@ -29,6 +26,7 @@ public class Empresa implements Serializable {
     private String nome;
 
     @NotBlank(message = "CNPJ é obrigatório")
+    @Column(unique = true)
     private String cnpj;
 
     @CreationTimestamp

@@ -10,7 +10,6 @@ import java.util.Date;
 @Data
 public class EmpresaDTO {
 
-    @JsonIgnore
     private Long id;
 
     @NotEmpty(message = "{validation.nome.NotEmpty}")
@@ -20,7 +19,6 @@ public class EmpresaDTO {
     @Size(min = 14, max = 14, message = "{validation.cnpj.Size}")
     private String cnpj;
 
-    @JsonIgnore
     private Date createdAt;
 
 }
