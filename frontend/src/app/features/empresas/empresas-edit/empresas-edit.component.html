@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Atualizar informações</h1>
+<div mat-dialog-content>
+    <form #myForm="ngForm">
+        <p>
+            <mat-form-field [style.width.px]=349>
+                <mat-label>Nome</mat-label>
+                <input matInput [(ngModel)]="model.nome" name="nome" required>
+            </mat-form-field>
+        </p>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button type="submit" (click)="atualizarNome()">Salvar</button>
+    <button mat-button mat-dialog-close>Fechar</button>
+</div>
